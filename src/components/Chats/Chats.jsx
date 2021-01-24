@@ -36,8 +36,7 @@ const Chats = () => {
         await db.collection("channels").doc(channelId).collection("messages").add({
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             message: input,
-            user: user,
-            token: user.token
+            user: user
         });
         setInput("")
     }
@@ -57,7 +56,7 @@ const Chats = () => {
                 <form>
                     <input value={input} onChange={e => setInput(e.target.value)} disabled={!channelId}
                            placeholder={`Message #${channelName}`}/>
-                    <button onClick={(e) => sendMessage(e)} disabled={!channelId} type={"submit"}
+                    <button onClick={sendMessage} disabled={!channelId} type={"submit"}
                             className={"chat__inputButton"}>Send message
                     </button>
                 </form>

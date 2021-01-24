@@ -7,6 +7,16 @@
 }
 .chat__messages {
     flex: 1;
+    overflow: scroll;
+}
+/*Hide scrollbar for chrome, safari and opera */
+.chat__messages::-webkit-scrollbar {
+    display: none;
+}
+/*Hide scrollbar IE, Edge and Firefox*/
+.chat__messages {
+    -ms-overflow-style: none;
+    scrollbar-width: none; /*Firefox*/
 }
 .chat__input{
     color: lightgray;

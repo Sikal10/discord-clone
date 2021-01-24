@@ -4,8 +4,8 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Chats from "./components/Chats/Chats";
 import {useDispatch, useSelector} from "react-redux";
 import {login, selectUser, logout} from "./features/userSlice";
-import Login from "./components/Login/Login";
 import {auth} from "./firebase";
+import Login from "./components/Login/Login";
 
 function App() {
     const user = useSelector(selectUser);
@@ -36,7 +36,6 @@ function App() {
                     <Chats/>
                 </> : <Login />
             }
-
         </div>
     );
 }
